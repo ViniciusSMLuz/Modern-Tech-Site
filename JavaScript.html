@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div>
+        <label for="InputValorA">
+
+            Valor A
+
+        </label>
+        <input type="number" id="InputValorA" placeholder="Digite o valor de A">
+    </div>
+    <div>
+        <label for="SelectOperacao">
+            Operacao
+        </label>
+        <select id="SelectOperacao">
+            <option value="1">
+                Soma
+            </option>
+            <option value="1">
+                Subtração
+            </option>
+            <option value="1">
+                Multiplicação
+            </option>
+            <option value="1">
+                Divisão
+            </option>
+        </select>
+    </div>
+    <div>
+        <label for="InputValorB">
+
+            Valor B
+
+        </label>
+        <input type="number" id="InputValorB" placeholder="Digite o valor de B">
+    </div>
+    <div>
+        <label for="InputResultado">
+
+            Resultado
+
+        </label>
+        <input type="number" id="InputResultado" readonly />
+    </div>
+    <button type="button" onclick="Calcular()">
+        Calcular
+    </button>
+
+    <script>
+        function Calcular() {
+
+            let InputValorA = document.getElementById("InputValorA");
+            let SelectOperacao = document.getElementById("SelectOperacao");
+            let InputValorB = document.getElementById("InputValorB");
+            let InputResultado = document.getElementById("InputResultado");
+
+
+            let ValorA = parseInt(InputValorA.value);
+            let Operacao = parseInt(SelectOperacao.value);
+            let ValorB = parseInt(InputValorB.value);
+            let Resultado;
+
+
+            if (Operacao == 1) {
+                Resultado = ValorA + ValorB;
+            } else if (Operacao == 2) {
+                Resultado = ValorA - ValorB;
+            } else if (Operacao == 3) {
+                Resultado = ValorA * ValorB;
+            } else if (Operacao == 4) {
+                Resultado = ValorA / ValorB;
+            }
+
+            InputResultado.value = Resultado;
+        }
+
+
+    </script>
+</body>
+
+</html>
